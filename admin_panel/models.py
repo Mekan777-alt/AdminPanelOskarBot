@@ -50,7 +50,7 @@ class OpenAccount3_1(models.Model):
         verbose_name_plural = "Пункт 3.1 Открытие счетов"
 
     def __str__(self):
-        return f"{self.item3_1_message, self.item3_1_reference} - {self.item3_2_message, self.item3_2_reference}"
+        return f"{self.item3_1_message, self.item3_1_reference}"
 
 
 class OpenAccount3_2(models.Model):

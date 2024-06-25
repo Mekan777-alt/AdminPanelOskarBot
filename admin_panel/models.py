@@ -6,10 +6,10 @@ from django.dispatch import receiver
 
 class KazahstanCart1_2(models.Model):
     item1_2_message = models.TextField(verbose_name="Текст сообщения для пункта 1.2", blank=False, null=True)
-    item1_2_reference = models.TextField(verbose_name="Ссылка для пунка 1.2", blank=False, null=True)
+    item1_2_reference = models.TextField(verbose_name="Ссылка для пунка 1.2", blank=True, null=True)
     item1_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.2",
-                                        blank=False, null=True)
-    item1_2_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                        blank=True, null=True)
+    item1_2_document_reserve = models.FileField(upload_to='documents', blank=True, null=True,
                                                 verbose_name="Загрузка документа для пункта 1.2")
 
     class Meta:
@@ -31,10 +31,10 @@ def delete_document(sender, instance, **kwargs):
 
 class KazahstanCart1_3(models.Model):
     item1_3_message = models.TextField(verbose_name="Текст сообщения для пункта 1.3", blank=False, null=True)
-    item1_3_reference = models.TextField(verbose_name="Ссылка для пунка 1.3", blank=False, null=True)
+    item1_3_reference = models.TextField(verbose_name="Ссылка для пунка 1.3", blank=True, null=True)
     item1_3_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.3",
-                                        blank=False, null=True)
-    item1_3_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                        blank=True, null=True)
+    item1_3_document_reserve = models.FileField(upload_to='documents', blank=True, null=True,
                                                 verbose_name="Загрузка документа для пункта 1.3")
 
     class Meta:
@@ -56,10 +56,10 @@ def delete_document(sender, instance, **kwargs):
 
 class Deposited(models.Model):
     item2_1_message = models.TextField(verbose_name="Текст сообщения для пункта 2.1", blank=False, null=True)
-    item2_1_reference = models.TextField(verbose_name="Ссылка для пункта 2.1", blank=False, null=True)
+    item2_1_reference = models.TextField(verbose_name="Ссылка для пункта 2.1", blank=True, null=True)
     item2_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 2.1",
-                                        blank=False, null=True)
-    item2_1_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                        blank=True, null=True)
+    item2_1_document_reserve = models.FileField(upload_to='documents', blank=True, null=True,
                                                 verbose_name="Загрузка документа для пункта 2.1")
 
     class Meta:
@@ -81,10 +81,10 @@ def delete_document(sender, instance, **kwargs):
 
 class OpenAccount3_1(models.Model):
     item3_1_message = models.TextField(verbose_name="Текст сообщения для пункта 3.1", blank=False, null=True)
-    item3_1_reference = models.TextField(verbose_name="Ссылка для пункта 3.1", blank=False, null=True)
+    item3_1_reference = models.TextField(verbose_name="Ссылка для пункта 3.1", blank=True, null=True)
     item3_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.1",
-                                        blank=False, null=True)
-    item3_1_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                        blank=True, null=True)
+    item3_1_document_reserve = models.FileField(upload_to='documents', blank=True, null=True,
                                                 verbose_name="Загрузка документа для пункта 3.1")
 
     class Meta:
@@ -106,10 +106,10 @@ def delete_document(sender, instance, **kwargs):
 
 class OpenAccount3_2(models.Model):
     item3_2_message = models.TextField(verbose_name="Текст сообщения для пункта 3.2", blank=False, null=True)
-    item3_2_reference = models.TextField(verbose_name="Ссылка для пункта 3.2", blank=False, null=True)
+    item3_2_reference = models.TextField(verbose_name="Ссылка для пункта 3.2", blank=True, null=True)
     item3_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.2",
-                                        blank=False, null=True)
-    item3_2_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                        blank=True, null=True)
+    item3_2_document_reserve = models.FileField(upload_to='documents', blank=True, null=True,
                                                 verbose_name="Загрузка документа для пункта 3.2")
 
     class Meta:
@@ -131,7 +131,7 @@ def delete_document(sender, instance, **kwargs):
 
 class GoToChat(models.Model):
     message = models.TextField(verbose_name="Текст сообщения для пункта 4", blank=False, null=True)
-    reference = models.TextField(verbose_name="Ссылка для пункта 4", blank=False, null=True)
+    reference = models.TextField(verbose_name="Ссылка для пункта 4", blank=True, null=True)
 
     class Meta:
         verbose_name = "Пункт Переход в чат"
@@ -143,7 +143,7 @@ class GoToChat(models.Model):
 
 class USDT(models.Model):
     message = models.TextField(verbose_name="Текст сообщения для пункта 5", blank=False, null=True)
-    reference = models.TextField(verbose_name="Ссылка для пункта 5", blank=False, null=True)
+    reference = models.TextField(verbose_name="Ссылка для пункта 5", blank=True, null=True)
 
     class Meta:
         verbose_name = "Пункт Перестановка USDT"

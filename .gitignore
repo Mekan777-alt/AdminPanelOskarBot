@@ -1,0 +1,5 @@
+.env
+.idea
+admin_panel/__pycache__
+admin/__pycache__
+admin_panel/migrations/__pycache__

@@ -25,6 +25,7 @@ services:
     volumes:
       - .:/app
       - /root/admin/static:/app/static
+      - /root/admin/documents:/app/documents
     ports:
       - "8000:8000"
     depends_on:
@@ -38,6 +39,7 @@ services:
     image: nginx:latest
     volumes:
       - /root/admin/static:/app/static
+      - /root/admin/documents:/app/documents
     ports:
       - "80:80"
     depends_on:

@@ -9,6 +9,8 @@ class KazahstanCart1_2(models.Model):
     item1_2_reference = models.TextField(verbose_name="Ссылка для пунка 1.2", blank=False, null=True)
     item1_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.2",
                                         blank=False, null=True)
+    item1_2_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                                verbose_name="Загрузка документа для пункта 1.2")
 
     class Meta:
         verbose_name = "Пункт 1.2 Карта Казахстана"
@@ -20,9 +22,11 @@ class KazahstanCart1_2(models.Model):
 
 @receiver(pre_delete, sender=KazahstanCart1_2)
 def delete_document(sender, instance, **kwargs):
-    if instance.item1_2_document:
+    if instance.item1_2_document or instance.item1_2_document_reserve:
         if os.path.isfile(instance.item1_2_document.path):
             os.remove(instance.item1_2_document.path)
+        elif os.path.isfile(instance.item1_2_document_reserve.path):
+            os.remove(instance.item1_2_document_reserve.path)
 
 
 class KazahstanCart1_3(models.Model):
@@ -30,6 +34,8 @@ class KazahstanCart1_3(models.Model):
     item1_3_reference = models.TextField(verbose_name="Ссылка для пунка 1.3", blank=False, null=True)
     item1_3_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.3",
                                         blank=False, null=True)
+    item1_3_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                                verbose_name="Загрузка документа для пункта 1.3")
 
     class Meta:
         verbose_name = "Пункт 1.3 Карта Казахстана"
@@ -41,9 +47,11 @@ class KazahstanCart1_3(models.Model):
 
 @receiver(pre_delete, sender=KazahstanCart1_3)
 def delete_document(sender, instance, **kwargs):
-    if instance.item1_3_document:
+    if instance.item1_3_document or instance.item1_3_document_reserve:
         if os.path.isfile(instance.item1_3_document.path):
             os.remove(instance.item1_3_document.path)
+        elif os.path.isfile(instance.item1_3_document_reserve.path):
+            os.remove(instance.item1_3_document_reserve.path)
 
 
 class Deposited(models.Model):
@@ -51,6 +59,8 @@ class Deposited(models.Model):
     item2_1_reference = models.TextField(verbose_name="Ссылка для пункта 2.1", blank=False, null=True)
     item2_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 2.1",
                                         blank=False, null=True)
+    item2_1_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                                verbose_name="Загрузка документа для пункта 2.1")
 
     class Meta:
         verbose_name = "Пункт 2.1 Депозит"
@@ -62,9 +72,11 @@ class Deposited(models.Model):
 
 @receiver(pre_delete, sender=Deposited)
 def delete_document(sender, instance, **kwargs):
-    if instance.item2_1_document:
+    if instance.item2_1_document or instance.item2_1_document_reserve:
         if os.path.isfile(instance.item2_1_document.path):
             os.remove(instance.item2_1_document.path)
+        elif os.path.isfile(instance.item2_1_document_reserve.path):
+            os.remove(instance.item2_1_document_reserve.path)
 
 
 class OpenAccount3_1(models.Model):
@@ -72,6 +84,8 @@ class OpenAccount3_1(models.Model):
     item3_1_reference = models.TextField(verbose_name="Ссылка для пункта 3.1", blank=False, null=True)
     item3_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.1",
                                         blank=False, null=True)
+    item3_1_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                                verbose_name="Загрузка документа для пункта 3.1")
 
     class Meta:
         verbose_name = "Пункт 3.1 Открытие счетов"
@@ -83,9 +97,11 @@ class OpenAccount3_1(models.Model):
 
 @receiver(pre_delete, sender=OpenAccount3_1)
 def delete_document(sender, instance, **kwargs):
-    if instance.item3_1_document:
+    if instance.item3_1_document or instance.item3_1_document_reserve:
         if os.path.isfile(instance.item3_1_document.path):
             os.remove(instance.item3_1_document.path)
+        elif os.path.isfile(instance.item3_1_document_reserve.path):
+            os.remove(instance.item3_1_document_reserve.path)
 
 
 class OpenAccount3_2(models.Model):
@@ -93,6 +109,8 @@ class OpenAccount3_2(models.Model):
     item3_2_reference = models.TextField(verbose_name="Ссылка для пункта 3.2", blank=False, null=True)
     item3_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.2",
                                         blank=False, null=True)
+    item3_2_document_reserve = models.FileField(upload_to='documents', blank=False, null=True,
+                                                verbose_name="Загрузка документа для пункта 3.2")
 
     class Meta:
         verbose_name = "Пункт 3.2 Открытие счетов"
@@ -104,9 +122,11 @@ class OpenAccount3_2(models.Model):
 
 @receiver(pre_delete, sender=OpenAccount3_2)
 def delete_document(sender, instance, **kwargs):
-    if instance.item3_2_document:
+    if instance.item3_2_document or instance.item3_2_document_reserve:
         if os.path.isfile(instance.item3_2_document.path):
             os.remove(instance.item3_2_document.path)
+        elif os.path.isfile(instance.item3_2_document_reserve.path):
+            os.remove(instance.item3_2_document_reserve.path)
 
 
 class GoToChat(models.Model):

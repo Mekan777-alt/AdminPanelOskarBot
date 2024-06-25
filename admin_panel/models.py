@@ -1,21 +1,30 @@
 from django.db import models
 
 
-class KazahstanCart(models.Model):
+class KazahstanCart1_2(models.Model):
     item1_2_message = models.TextField(verbose_name="Текст сообщения для пункта 1.2", blank=False, null=True)
     item1_2_reference = models.TextField(verbose_name="Ссылка для пунка 1.2", blank=False, null=True)
     item1_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.2", blank=False, null=True)
 
-    item1_3_message = models.TextField(verbose_name="Текст сообщения для пункта 1.3", blank=False, null=True)
-    item1_3_reference = models.TextField(verbose_name="Ссылка для пунка 1.3", blank=False, null=True)
-    item1_3_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.3", blank=False, null=True)
-
     class Meta:
-        verbose_name = "Пункт Карта Казахстана"
-        verbose_name_plural = "ункт Карта Казахстана"
+        verbose_name = "Пункт 1.2 Карта Казахстана"
+        verbose_name_plural = "Пункт 1.2 Карта Казахстана"
 
     def __str__(self):
-        return f"{self.item1_2_message, self.item1_2_reference} - {self.item1_3_message, self.item1_3_reference}"
+        return f"{self.item1_2_message, self.item1_2_reference}"
+
+class KazahstanCart1_3(models.Model):
+    item1_3_message = models.TextField(verbose_name="Текст сообщения для пункта 1.3", blank=False, null=True)
+    item1_3_reference = models.TextField(verbose_name="Ссылка для пунка 1.3", blank=False, null=True)
+    item1_3_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 1.3",
+                                        blank=False, null=True)
+
+    class Meta:
+        verbose_name = "Пункт 1.3 Карта Казахстана"
+        verbose_name_plural = "Пункт 1.3 Карта Казахстана"
+
+    def __str__(self):
+        return f"{self.item1_3_message, self.item1_3_reference}"
 
 
 class Deposited(models.Model):
@@ -24,25 +33,34 @@ class Deposited(models.Model):
     item2_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 2.1", blank=False, null=True)
 
     class Meta:
-        verbose_name = "Пункт Депозит"
-        verbose_name_plural = "Пункт Депозит"
+        verbose_name = "Пункт 2.1 Депозит"
+        verbose_name_plural = "Пункт 2.1 Депозит"
 
     def __str__(self):
         return f"{self.item2_1_message, self.item2_1_reference}"
 
 
-class OpenAccount(models.Model):
+class OpenAccount3_1(models.Model):
     item3_1_message = models.TextField(verbose_name="Текст сообщения для пункта 3.1", blank=False, null=True)
     item3_1_reference = models.TextField(verbose_name="Ссылка для пункта 3.1", blank=False, null=True)
     item3_1_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.1", blank=False, null=True)
 
+    class Meta:
+        verbose_name = "Пункт 3.1 Открытие счетов"
+        verbose_name_plural = "Пункт 3.1 Открытие счетов"
+
+    def __str__(self):
+        return f"{self.item3_1_message, self.item3_1_reference} - {self.item3_2_message, self.item3_2_reference}"
+
+
+class OpenAccount3_2(models.Model):
     item3_2_message = models.TextField(verbose_name="Текст сообщения для пункта 3.2", blank=False, null=True)
     item3_2_reference = models.TextField(verbose_name="Ссылка для пункта 3.2", blank=False, null=True)
     item3_2_document = models.FileField(upload_to='documents', verbose_name="Загрузка документа для пункта 3.2", blank=False, null=True)
 
     class Meta:
-        verbose_name = "Пункт Открытие счетов"
-        verbose_name_plural = "Пункт Открытие счетов"
+        verbose_name = "Пункт 3.2 Открытие счетов"
+        verbose_name_plural = "Пункт 3.2 Открытие счетов"
 
     def __str__(self):
         return f"{self.item3_1_message, self.item3_1_reference} - {self.item3_2_message, self.item3_2_reference}"

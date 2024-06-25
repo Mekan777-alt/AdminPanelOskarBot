@@ -1,4 +1,5 @@
 .env
+.venv
 .idea
 admin_panel/__pycache__
 admin/__pycache__

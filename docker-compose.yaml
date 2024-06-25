@@ -41,6 +41,7 @@ services:
       - /root/admin/static:/app/static
       - /root/admin/media:/app/media
     ports:
+      - "443:443"
       - "80:80"
     depends_on:
       - django

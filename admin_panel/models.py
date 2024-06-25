@@ -12,7 +12,7 @@ class KazahstanCart(models.Model):
 
     class Meta:
         verbose_name = "Пункт Карта Казахстана"
-        verbose_name_plural = "Пункт Карта Казахстана"
+        verbose_name_plural = "ункт Карта Казахстана"
 
     def __str__(self):
         return f"{self.item1_2_message, self.item1_2_reference} - {self.item1_3_message, self.item1_3_reference}"
